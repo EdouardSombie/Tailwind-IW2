@@ -163,6 +163,22 @@ textarea {
 }
 /* Globals */
 @layer globals {
+  :root {
+    --white: #fff;
+    --white-light: white;
+    --black: #000;
+    --black-light: #4d4d4d;
+    --blue: #5d7a97;
+    --blue-light: #8ca2b8;
+    --darkBlue: #1e293a;
+    --darkBlue-light: #49648d;
+    --pink: #ff2896;
+    --pink-light: #ff69b6;
+    --orange: #ff9b65;
+    --orange-light: #ffb993;
+    --green: #00d5d5;
+    --green-light: #2fffff;
+  }
   body {
     font-family: "Istok Web", system-ui;
   }
@@ -244,6 +260,31 @@ textarea {
     .container {
       max-width: calc(1536px - 2rem);
     }
+  }
+}
+@layer components {
+  .bioCard {
+    width: 20rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--darkBlue);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    position: relative;
+  }
+  .bioCard__header {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0;
   }
 }
 

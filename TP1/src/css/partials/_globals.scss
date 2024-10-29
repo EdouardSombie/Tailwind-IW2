@@ -1,6 +1,18 @@
 @use "fonts" as f;
+@use "variables" as v;
+@use "sass:color";
+
 /* Globals */
+
 @layer globals {
+	:root {
+		// Génération des variables css
+		@each $name, $value in v.$colors {
+			--#{$name}: #{$value};
+			--#{$name}-light: #{color.scale($value, $lightness: 30%)};
+		}
+	}
+
 	body {
 		font-family: f.$font1;
 	}
