@@ -1,0 +1,11 @@
+@use "partials/layers";
+@use "vendor/modern-normalize.css";
+@use "partials/globals";
+@use "partials/utilities";
+
+@use "components/container";
+
+// Plutôt que d'utiliser un flag !important, on peut se contenter d'inclure les utilities en dernier
+// Et encore mieux, dans des layers css :) Mais à ce moment là, il faut tout mettre dans des layers...
+
+//

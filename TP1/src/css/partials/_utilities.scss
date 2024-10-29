@@ -1,0 +1,11 @@
+/*  Utilities  */
+@layer utilities {
+	@for $i from 0 through 6 {
+		.mt-#{$i} {
+			margin-top: $i * 0.25rem;
+		}
+		.mb-#{$i} {
+			margin-bottom: $i * 0.25rem;
+		}
+	}
+}
