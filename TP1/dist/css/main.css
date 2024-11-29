@@ -10,8 +10,8 @@
   Use a better box model (opinionated).
   */
   *,
-::before,
-::after {
+  ::before,
+  ::after {
     box-sizing: border-box;
   }
   html {
@@ -36,7 +36,7 @@
   Add the correct font weight in Chrome and Safari.
   */
   b,
-strong {
+  strong {
     font-weight: bolder;
   }
   /**
@@ -44,9 +44,9 @@ strong {
   2. Correct the odd 'em' font sizing in all browsers.
   */
   code,
-kbd,
-samp,
-pre {
+  kbd,
+  samp,
+  pre {
     font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
     font-size: 1em; /* 2 */
   }
@@ -60,7 +60,7 @@ pre {
   Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
   */
   sub,
-sup {
+  sup {
     font-size: 75%;
     line-height: 0;
     position: relative;
@@ -91,10 +91,10 @@ sup {
   2. Remove the margin in Firefox and Safari.
   */
   button,
-input,
-optgroup,
-select,
-textarea {
+  input,
+  optgroup,
+  select,
+  textarea {
     font-family: inherit; /* 1 */
     font-size: 100%; /* 1 */
     line-height: 1.15; /* 1 */
@@ -104,9 +104,9 @@ textarea {
   Correct the inability to style clickable types in iOS and Safari.
   */
   button,
-[type=button],
-[type=reset],
-[type=submit] {
+  [type=button],
+  [type=reset],
+  [type=submit] {
     -webkit-appearance: button;
   }
   /**
@@ -125,7 +125,7 @@ textarea {
   Correct the cursor style of increment and decrement buttons in Safari.
   */
   ::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
+  ::-webkit-outer-spin-button {
     height: auto;
   }
   /**
@@ -167,19 +167,19 @@ textarea {
     --white: #fff;
     --white-light: white;
     --black: #000;
-    --black-light: #4d4d4d;
+    --black-light: rgb(76.5, 76.5, 76.5);
     --blue: #5d7a97;
-    --blue-light: #8ca2b8;
+    --blue-light: rgb(139.7696721311, 161.9, 184.0303278689);
     --darkBlue: #1e293a;
-    --darkBlue-light: #49648d;
+    --darkBlue-light: rgb(73.1590909091, 99.9840909091, 141.4409090909);
     --pink: #ff2896;
-    --pink-light: #ff69b6;
+    --pink-light: rgb(255, 104.5, 181.5);
     --orange: #ff9b65;
-    --orange-light: #ffb993;
+    --orange-light: rgb(255, 185, 147.2);
     --green: #00d5d5;
-    --green-light: #2fffff;
+    --green-light: rgb(47.1, 255, 255);
     --lime: #00ffc2;
-    --lime-light: #4dffd4;
+    --lime-light: rgb(76.5, 255, 212.3);
   }
   body {
     font-family: "Istok Web", system-ui;
@@ -266,11 +266,24 @@ textarea {
 }
 @layer components {
   .bioCard {
+    /* variables locales */
+    --bgColor: var(--darkBlue);
+    --textColor: var(--blue);
+    --imageFilter: saturate(0);
+    --gradientColor1: var(--pink);
+    --gradientColor2: var(--orange);
+    --gradientColor3: var(--lime);
+    --gradientColor4: var(--green);
+    --pillColor: var(--pink);
+    --pillAltColor: var(--black);
+    --element-width: 20rem;
+    --padding: 2rem;
+    --separatorOpacity: 1;
     width: 20rem;
     padding: 2rem;
     border-radius: 1rem;
-    background-color: var(--darkBlue);
-    color: var(--blue);
+    background-color: var(--bgColor);
+    color: var(--textColor);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -278,6 +291,20 @@ textarea {
     gap: 0;
     position: relative;
     overflow: hidden;
+  }
+  @media (prefers-color-scheme: dark) {
+    .bioCard {
+      --bgColor: var(--white);
+      --textColor: var(--blue);
+      --imageFilter: saturate(100%);
+      --gradientColor1: var(--lime);
+      --gradientColor2: var(--green);
+      --gradientColor3: var(--pink);
+      --gradientColor4: var(--orange);
+      --pillColor: var(--blue);
+      --pillAltColor: var(--white);
+      --separatorOpacity: 0.25;
+    }
   }
   .bioCard > * {
     margin-top: 0;
@@ -352,7 +379,7 @@ textarea {
     background: var(--white);
   }
   .bioCard__a svg,
-.bioCard__a path {
+  .bioCard__a path {
     fill: var(--pink);
   }
   .bioCard__a svg {
@@ -371,7 +398,7 @@ textarea {
     background: linear-gradient(to bottom, var(--lime) 0%, var(--green) 100%);
   }
   .bioCard__a--alt svg,
-.bioCard__a--alt path {
+  .bioCard__a--alt path {
     fill: var(--black);
   }
   .bioCard__a--alt svg {

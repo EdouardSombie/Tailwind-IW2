@@ -4,14 +4,42 @@
 
 @layer components {
 	.bioCard {
+		/* variables locales */
+		--bgColor: var(--darkBlue);
+		--textColor: var(--blue);
+		--imageFilter: saturate(0);
+		--gradientColor1: var(--pink);
+		--gradientColor2: var(--orange);
+		--gradientColor3: var(--lime);
+		--gradientColor4: var(--green);
+		--pillColor: var(--pink);
+		--pillAltColor: var(--black);
+		--element-width: #{f.rem(320)};
+		--padding: #{f.rem(32)};
+		--separatorOpacity: 1;
+
 		width: f.rem(320);
 		padding: f.rem(32);
 		border-radius: f.rem(16);
-		background-color: var(--darkBlue);
-		color: var(--blue);
+		background-color: var(--bgColor);
+		color: var(--textColor);
 		@include m.flexbox(column, flex-start, center);
 		position: relative;
 		overflow: hidden;
+
+		@media (prefers-color-scheme: dark) {
+			--bgColor: var(--white);
+			--textColor: var(--blue);
+			--imageFilter: saturate(100%);
+			--gradientColor1: var(--lime);
+			--gradientColor2: var(--green);
+			--gradientColor3: var(--pink);
+			--gradientColor4: var(--orange);
+			--pillColor: var(--blue);
+			--pillAltColor: var(--white);
+			--separatorOpacity: 0.25;
+		}
+
 		& > * {
 			margin-top: 0;
 		}
