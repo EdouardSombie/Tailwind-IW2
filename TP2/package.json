@@ -2,5 +2,16 @@
   "devDependencies": {
     "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.9"
-  }
+  },
+  "name": "tp2",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx tailwindcss -i ./src/css/input.css -o ./dist/css/main.css --watch",
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./dist/css/main.css --build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

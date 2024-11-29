@@ -11,10 +11,20 @@
 			--#{$name}: #{$value};
 			--#{$name}-light: #{color.scale($value, $lightness: 30%)};
 		}
+		--bodyBgColor: var(--white);
+		--bodycolor: var(--black);
+		--shadow-color: rgba(0, 0, 0, 0.4);
+		@media screen and (prefers-color-scheme: dark) {
+			--bodyBgColor: var(--black);
+			--bodycolor: var(--white);
+			--shadow-color: rgba(255, 255, 255, 0.4);
+		}
 	}
 
 	body {
 		font-family: f.$font1;
+		background-color: var(--bodyBgColor);
+		color: var(--bodycolor);
 	}
 
 	img {

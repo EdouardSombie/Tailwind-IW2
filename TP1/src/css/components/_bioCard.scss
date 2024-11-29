@@ -1,6 +1,7 @@
 @use "../partials/functions" as f;
 @use "../partials/variables" as v;
 @use "../partials/mixins" as m;
+@use "sass:map";
 
 @layer components {
 	.bioCard {
@@ -18,14 +19,17 @@
 		--padding: #{f.rem(32)};
 		--separatorOpacity: 1;
 
-		width: f.rem(320);
-		padding: f.rem(32);
+		width: var(--element-width);
+		padding: var(--padding);
 		border-radius: f.rem(16);
 		background-color: var(--bgColor);
 		color: var(--textColor);
+		box-shadow: 0 0 0.5rem var(--shadow-color);
 		@include m.flexbox(column, flex-start, center);
 		position: relative;
 		overflow: hidden;
+		text-align: center;
+		transition: all 0.3s;
 
 		@media (prefers-color-scheme: dark) {
 			--bgColor: var(--white);
@@ -40,8 +44,16 @@
 			--separatorOpacity: 0.25;
 		}
 
+		@media screen and (min-width: map.get(v.$breakpoints, "sm")) {
+			--element-width: #{f.rem(720)};
+			--padding: #{f.rem(0)};
+			--separatorOpacity: 0.25;
+			@include m.flexbox(row, flex-start, stretch);
+			text-align: left;
+		}
 		& > * {
 			margin-top: 0;
+			transition: all 0.3s;
 		}
 		&__header {
 			position: absolute;
@@ -51,16 +63,32 @@
 			@include m.flexbox(row, flex-end, center);
 		}
 		&__img {
-			filter: saturate(0);
+			filter: var(--imageFilter);
 			@include m.roundImage(f.rem(176));
 			margin-bottom: f.rem(24);
+			@media screen and (min-width: map.get(v.$breakpoints, "sm")) {
+				margin: 0;
+				aspect-ratio: unset;
+				border-radius: 0;
+				width: f.rem(240);
+			}
+		}
+		&__content {
+			@media screen and (min-width: map.get(v.$breakpoints, "sm")) {
+				padding: f.rem(20);
+				overflow: hidden;
+			}
 		}
 		&__h1 {
 			font-size: f.rem(24);
 			line-height: 1;
 			font-weight: 700;
 			margin-bottom: f.rem(12);
-			@include m.textGradient(bottom, var(--pink), var(--orange));
+			@include m.textGradient(
+				bottom,
+				var(--gradientColor1),
+				var(--gradientColor2)
+			);
 		}
 		&__h2 {
 			font-size: f.rem(20);
@@ -73,9 +101,9 @@
 			border-color: var(--blue);
 			border-width: f.rem(1);
 			margin-bottom: f.rem(16);
+			opacity: var(--separatorOpacity);
 		}
 		&__p {
-			text-align: center;
 			line-height: normal;
 			margin-bottom: f.rem(48);
 		}
@@ -85,11 +113,15 @@
 			position: relative;
 		}
 		&__a {
-			@include m.pillButton(var(--white), var(--pink));
+			@include m.pillButton(var(--white), var(--pillColor));
 			&--alt {
 				@include m.pillButton(
-					linear-gradient(to bottom, var(--lime) 0%, var(--green) 100%),
-					var(--black),
+					linear-gradient(
+						to bottom,
+						var(--gradientColor3) 0%,
+						var(--gradientColor4) 100%
+					),
+					var(--pillAltColor),
 					true
 				);
 			}
@@ -99,13 +131,21 @@
 			width: 100%;
 			&::before {
 				content: "";
-				background: linear-gradient(-187deg, var(--orange) 0%, var(--pink) 60%);
+				background: linear-gradient(
+					-187deg,
+					var(--gradientColor2) 0%,
+					var(--gradientColor1) 60%
+				);
 				position: absolute;
 				top: f.rem(-32);
 				left: f.rem(-32);
 				right: f.rem(-32);
 				bottom: f.rem(-56);
 				transform: skewY(7deg);
+				@media screen and (min-width: map.get(v.$breakpoints, "sm")) {
+					transform: skewY(3deg);
+					top: f.rem(-16);
+				}
 			}
 		}
 	}
