@@ -1,125 +1,556 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Composant vidéo</title>
-		<link rel="stylesheet" href="output.css" />
-	</head>
-	<body>
-		<div class="container m-auto">
-			<h1 class="text-lg font-bold my-8">Composant vidéo</h1>
-			<article
-				class="w-72 rounded-md bg-neutral-900 text-neutral-400 overflow-hidden hover:w-96 transition-all">
-				<img
-					class="w-full aspect-video"
-					alt="Saul"
-					src="https://occ-0-7435-7434.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeMSDWszjl16jq7qFSWk8uIzw0T53Vaag65yKbuXMN-etObAVJPWHbdvx8oe0Kv362vFmLe7KX0iL4Vb3eAPAUTit1ueVdBY3ZILFKNIf4RAKTLx8jgRNHokWBKgiIiTv1hF.jpg?r=696" />
-				<div class="relative p-4">
-					<!-- Button mute (en absolute) -->
-					<button
-						class="border-current rounded-full p-2 border absolute right-4 -top-14 bg-white/15 hover:bg-white/30 transition-all duration-300">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke="currentColor"
-							class="size-6">
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-						</svg>
-					</button>
-					<nav class="flex justify-between">
-						<ul class="flex gap-2">
-							<li>
-								<!-- play -->
-								<button
-									class="hover:bg-neutral-400 hover:text-neutral-900 border-current rounded-full p-2 border transition-all duration-300">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke-width="1.5"
-										stroke="currentColor"
-										class="size-6">
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
-									</svg>
-								</button>
-							</li>
-							<li>
-								<!-- plus -->
-								<button
-									class="hover:bg-neutral-400 hover:text-neutral-900 border-current rounded-full p-2 border transition-all duration-300">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke-width="1.5"
-										stroke="currentColor"
-										class="size-6">
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											d="M12 4.5v15m7.5-7.5h-15" />
-									</svg>
-								</button>
-							</li>
-							<li>
-								<!-- thumb -->
-								<button
-									class="hover:bg-neutral-400 hover:text-neutral-900 border-current rounded-full p-2 border transition-all duration-300">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke-width="1.5"
-										stroke="currentColor"
-										class="size-6">
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
-									</svg>
-								</button>
-							</li>
-						</ul>
-						<!-- bouton 'more' -->
-						<button
-							class="hover:bg-neutral-400 hover:text-neutral-900 border-current rounded-full p-2 border transition-all duration-300">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-								class="size-6">
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-							</svg>
-						</button>
-					</nav>
-					<!-- infos -->
-					<ul class="flex gap-2 mt-4">
-						<li><span class="border border-current p-1">16+</span></li>
-						<li><span>6 saisons</span></li>
-						<li><span class="border border-current p-1 text-xs">HD</span></li>
-					</ul>
-					<!-- genres -->
-					<ul class="flex gap-2 mt-6">
-						<li><span>Insolite</span></li>
-						<li><span>Drame</span></li>
-						<li><span>Liens familiaux</span></li>
-					</ul>
-				</div>
-			</article>
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Composant vidéo</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <div class="container m-auto">
+      <h1 class="my-8 text-lg font-bold">Composant vidéo</h1>
+      <div
+        class="_bg-neutral-800 group/wrapper relative flex items-start gap-4"
+      >
+        <!-- background du conteneur -->
+        <div class="peer absolute bottom-0 left-0 right-0 top-0"></div>
+        <article
+          class="group relative w-72 overflow-hidden rounded-md bg-neutral-900 text-neutral-400 shadow-md transition-all duration-300 hover:z-10 hover:-mx-12 hover:-mt-4 hover:w-96 hover:!opacity-100 hover:shadow-lg group-hover/wrapper:opacity-30 peer-hover:opacity-100"
+        >
+          <img
+            class="aspect-video w-full"
+            alt="Saul"
+            src="https://occ-0-7435-7434.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeMSDWszjl16jq7qFSWk8uIzw0T53Vaag65yKbuXMN-etObAVJPWHbdvx8oe0Kv362vFmLe7KX0iL4Vb3eAPAUTit1ueVdBY3ZILFKNIf4RAKTLx8jgRNHokWBKgiIiTv1hF.jpg?r=696"
+          />
+          <div
+            class="relative max-h-0 overflow-hidden px-4 py-0 transition-all duration-300 group-hover:max-h-40 group-hover:py-4"
+          >
+            <!-- Button mute (en absolute) -->
+            <button
+              class="absolute -top-14 right-4 rounded-full border border-current bg-white/15 p-2 transition-all duration-300 hover:bg-white/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                />
+              </svg>
+            </button>
+            <nav class="flex justify-between">
+              <ul class="flex gap-2">
+                <li>
+                  <!-- play -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <!-- plus -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <!-- thumb -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+              <!-- bouton 'more' -->
+              <button
+                class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
+            </nav>
+            <!-- infos -->
+            <ul class="mt-4 flex gap-2">
+              <li><span class="border border-current p-1">16+</span></li>
+              <li><span>6 saisons</span></li>
+              <li><span class="border border-current p-1 text-xs">HD</span></li>
+            </ul>
+            <!-- genres -->
+            <ul class="mt-6 flex gap-5">
+              <li><span>Insolite</span></li>
+              <li class="list-disc marker:text-neutral-700">
+                <span>Drame</span>
+              </li>
+              <li class="list-disc marker:text-neutral-700">
+                <span>Liens familiaux</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article
+          class="group relative w-72 overflow-hidden rounded-md bg-neutral-900 text-neutral-400 shadow-md transition-all duration-300 hover:z-10 hover:-mx-12 hover:-mt-4 hover:w-96 hover:!opacity-100 hover:shadow-lg group-hover/wrapper:opacity-30 peer-hover:opacity-100"
+        >
+          <img
+            class="aspect-video w-full"
+            alt="Saul"
+            src="https://occ-0-7435-7434.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeMSDWszjl16jq7qFSWk8uIzw0T53Vaag65yKbuXMN-etObAVJPWHbdvx8oe0Kv362vFmLe7KX0iL4Vb3eAPAUTit1ueVdBY3ZILFKNIf4RAKTLx8jgRNHokWBKgiIiTv1hF.jpg?r=696"
+          />
+          <div
+            class="relative max-h-0 overflow-hidden px-4 py-0 transition-all duration-300 group-hover:max-h-40 group-hover:py-4"
+          >
+            <!-- Button mute (en absolute) -->
+            <button
+              class="absolute -top-14 right-4 rounded-full border border-current bg-white/15 p-2 transition-all duration-300 hover:bg-white/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                />
+              </svg>
+            </button>
+            <nav class="flex justify-between">
+              <ul class="flex gap-2">
+                <li>
+                  <!-- play -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <!-- plus -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <!-- thumb -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+              <!-- bouton 'more' -->
+              <button
+                class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
+            </nav>
+            <!-- infos -->
+            <ul class="mt-4 flex gap-2">
+              <li><span class="border border-current p-1">16+</span></li>
+              <li><span>6 saisons</span></li>
+              <li><span class="border border-current p-1 text-xs">HD</span></li>
+            </ul>
+            <!-- genres -->
+            <ul class="mt-6 flex gap-5">
+              <li><span>Insolite</span></li>
+              <li class="list-disc marker:text-neutral-700">
+                <span>Drame</span>
+              </li>
+              <li class="list-disc marker:text-neutral-700">
+                <span>Liens familiaux</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article
+          class="group relative w-72 overflow-hidden rounded-md bg-neutral-900 text-neutral-400 shadow-md transition-all duration-300 hover:z-10 hover:-mx-12 hover:-mt-4 hover:w-96 hover:!opacity-100 hover:shadow-lg group-hover/wrapper:opacity-30 peer-hover:opacity-100"
+        >
+          <img
+            class="aspect-video w-full"
+            alt="Saul"
+            src="https://occ-0-7435-7434.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeMSDWszjl16jq7qFSWk8uIzw0T53Vaag65yKbuXMN-etObAVJPWHbdvx8oe0Kv362vFmLe7KX0iL4Vb3eAPAUTit1ueVdBY3ZILFKNIf4RAKTLx8jgRNHokWBKgiIiTv1hF.jpg?r=696"
+          />
+          <div
+            class="relative max-h-0 overflow-hidden px-4 py-0 transition-all duration-300 group-hover:max-h-40 group-hover:py-4"
+          >
+            <!-- Button mute (en absolute) -->
+            <button
+              class="absolute -top-14 right-4 rounded-full border border-current bg-white/15 p-2 transition-all duration-300 hover:bg-white/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                />
+              </svg>
+            </button>
+            <nav class="flex justify-between">
+              <ul class="flex gap-2">
+                <li>
+                  <!-- play -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <!-- plus -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <!-- thumb -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+              <!-- bouton 'more' -->
+              <button
+                class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
+            </nav>
+            <!-- infos -->
+            <ul class="mt-4 flex gap-2">
+              <li><span class="border border-current p-1">16+</span></li>
+              <li><span>6 saisons</span></li>
+              <li><span class="border border-current p-1 text-xs">HD</span></li>
+            </ul>
+            <!-- genres -->
+            <ul class="mt-6 flex gap-5">
+              <li><span>Insolite</span></li>
+              <li class="list-disc marker:text-neutral-700">
+                <span>Drame</span>
+              </li>
+              <li class="list-disc marker:text-neutral-700">
+                <span>Liens familiaux</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article
+          class="group relative w-72 overflow-hidden rounded-md bg-neutral-900 text-neutral-400 shadow-md transition-all duration-300 hover:z-10 hover:-mx-12 hover:-mt-4 hover:w-96 hover:!opacity-100 hover:shadow-lg group-hover/wrapper:opacity-30 peer-hover:opacity-100"
+        >
+          <img
+            class="aspect-video w-full"
+            alt="Saul"
+            src="https://occ-0-7435-7434.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeMSDWszjl16jq7qFSWk8uIzw0T53Vaag65yKbuXMN-etObAVJPWHbdvx8oe0Kv362vFmLe7KX0iL4Vb3eAPAUTit1ueVdBY3ZILFKNIf4RAKTLx8jgRNHokWBKgiIiTv1hF.jpg?r=696"
+          />
+          <div
+            class="relative max-h-0 overflow-hidden px-4 py-0 transition-all duration-300 group-hover:max-h-40 group-hover:py-4"
+          >
+            <!-- Button mute (en absolute) -->
+            <button
+              class="absolute -top-14 right-4 rounded-full border border-current bg-white/15 p-2 transition-all duration-300 hover:bg-white/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+                />
+              </svg>
+            </button>
+            <nav class="flex justify-between">
+              <ul class="flex gap-2">
+                <li>
+                  <!-- play -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <!-- plus -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <!-- thumb -->
+                  <button
+                    class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+              <!-- bouton 'more' -->
+              <button
+                class="rounded-full border border-current p-2 transition-all duration-300 hover:bg-neutral-400 hover:text-neutral-900"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
+            </nav>
+            <!-- infos -->
+            <ul class="mt-4 flex gap-2">
+              <li><span class="border border-current p-1">16+</span></li>
+              <li><span>6 saisons</span></li>
+              <li><span class="border border-current p-1 text-xs">HD</span></li>
+            </ul>
+            <!-- genres -->
+            <ul class="mt-6 flex gap-5">
+              <li><span>Insolite</span></li>
+              <li class="list-disc marker:text-neutral-700">
+                <span>Drame</span>
+              </li>
+              <li class="list-disc marker:text-neutral-700">
+                <span>Liens familiaux</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
 </html>

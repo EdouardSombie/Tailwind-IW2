@@ -8,5 +8,9 @@
 		"watch": "npx tailwindcss -i input.css -o output.css --watch"
 	},
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"devDependencies": {
+		"prettier": "^3.4.2",
+		"prettier-plugin-tailwindcss": "^0.6.9"
+	}
 }
